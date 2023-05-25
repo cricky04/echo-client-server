@@ -5,7 +5,7 @@
 #include <thread>
 #include <arpa/inet.h>
 #include <set>
-
+#include<stdio.h>
 
 using namespace std;
 
@@ -33,9 +33,10 @@ struct Param {
 
 		for (int i = 2; i < argc; i++) {
 
-			if (strcmp(argv[i], "-b") == 0) {
+			if (strcmp(argv[i], "-b") == 0) 
+			{
 				broadcast = true;
-				cout << "broadcast on" << endl;
+				printf("Broadcasting... \n");
 				continue;
 			}
 			if (strcmp(argv[i], "-e") == 0) {
@@ -44,8 +45,9 @@ struct Param {
 				continue;
 			}
 		}
-		if ((echo|broadcast) != true){
-			cout << "no option" << endl;
+		if ((echo|broadcast) != true)
+		{
+			printf("Not broadcasting....\n");
 		}
 		return port != 0;
 	}
